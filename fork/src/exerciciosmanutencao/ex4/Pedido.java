@@ -37,14 +37,16 @@ public class Pedido {
 
     private Produto produto;
     private Cliente cliente;
+    private int quantidade;
 
-    public Pedido(Produto produto, Cliente cliente) {
+    public Pedido(Produto produto, Cliente cliente,int quantidade) {
         this.produto = produto;
         this.cliente = cliente;
+        this.quantidade = quantidade;
     }
 
     public double calcularTotal() {
-        return produto.getPrecoUnitario() * produto.getQuantidade();
+        return produto.getPrecoUnitario() * quantidade;
     }
 
     public Produto getProduto() {
@@ -63,13 +65,21 @@ public class Pedido {
         this.cliente = cliente;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
     public static void main(String[] args){
         Cliente cl1 = new Cliente("Lima","lima@gmail.com");
-        Produto prod1 = new Produto("Tinta",100,10);
+        Produto prod1 = new Produto("Tinta",100);
 
         Resumo resumo = new Resumo();
 
-        Pedido pedido = new Pedido(prod1,cl1);
+        Pedido pedido = new Pedido(prod1,cl1,10);
 
         resumo.imprimirResumo(pedido);
 

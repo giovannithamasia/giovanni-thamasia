@@ -7,7 +7,7 @@ public class Resumo {
         System.out.println("Email: " + pedido.getCliente().getEmailCliente());
         System.out.println("Produto: " + pedido.getProduto().getNomeProduto());
         System.out.println("Preço unitário: " + pedido.getProduto().getPrecoUnitario());
-        System.out.println("Quantidade: " + pedido.getProduto().getQuantidade());
+        System.out.println("Quantidade: " + pedido.getQuantidade());
         System.out.println("Total: " + pedido.calcularTotal());
     }
 }

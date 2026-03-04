@@ -4,13 +4,10 @@ public class Produto {
 
     private String nomeProduto;
     private double precoUnitario;
-    private int quantidade;
 
-
-    public Produto(String nomeProduto, double precoUnitario, int quantidade) {
+    public Produto(String nomeProduto, double precoUnitario) {
         this.nomeProduto = nomeProduto;
         this.precoUnitario = precoUnitario;
-        this.quantidade = quantidade;
     }
 
     public String getNomeProduto() {
@@ -29,11 +26,5 @@ public class Produto {
         this.precoUnitario = precoUnitario;
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
 }
