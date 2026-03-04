@@ -2,7 +2,7 @@ package exerciciosmanutencao.ex1;
 
 /**
  * 1)
- * O imposto está fixo em 10%, dificultando adaptação a novas regras.
+ * O IMPOSTO está fixo em 10%, dificultando adaptação a novas regras.
  *
  * Violação do princípio aberto/fechado.
  *
@@ -10,18 +10,17 @@ package exerciciosmanutencao.ex1;
  */
 public class CalculadoraDePreco  {
 
-   public double calcular(double preco,Calculos calculo){
-       return calculo.calcular(preco);
-   }
+    private static final double IMPOSTO = 0.10;
+
+    public static double calcular(double preco){
+        double resultado = preco;
+        resultado = resultado * (preco*IMPOSTO);
+        return resultado;
+    }
+
 
     public static void main(String[] args) {
-
-       CalculadoraDePreco calculadoraDePreco = new CalculadoraDePreco();
-
-       CalcularImposto imposto = new CalcularImposto();
-
-        System.out.println(calculadoraDePreco.calcular(100,imposto));
-
+        System.out.println(calcular(100));
     }
 
 }
