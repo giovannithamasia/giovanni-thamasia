@@ -21,7 +21,7 @@ public class ContaBancaria {
     }
 
     public void depositar(double valor) {
-        if (valor<0){
+        if (valor<=0){
             throw new IllegalArgumentException("Deposito invalido! Valor negativo");
         }
 
@@ -29,12 +29,13 @@ public class ContaBancaria {
     }
 
     public void sacar(double valor) {
-        if (valor>saldo){
-            throw new IllegalArgumentException("Valor maior que o saldo disponivel");
+
+        if (valor<=0){
+            throw new IllegalArgumentException("Saque invalido! Valor negativo");
         }
 
-        if (valor<0){
-            throw new IllegalArgumentException("Saque invalido! Valor negativo");
+        if (valor>saldo){
+            throw new IllegalArgumentException("Valor maior que o saldo disponivel");
         }
 
         saldo -= valor;
